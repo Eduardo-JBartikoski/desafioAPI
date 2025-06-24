@@ -6,10 +6,10 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import org.springframework.boot.autoconfigure.pulsar.PulsarProperties.Transaction;
+//import org.springframework.boot.autoconfigure.pulsar.PulsarProperties.Transaction;
 import org.springframework.stereotype.Service;
 
-import desafio.api.springboot.transaction;
+import desafio.api.springboot.Transaction;
 
 @Service
 public class transactionservice {
@@ -27,9 +27,9 @@ public class transactionservice {
     public DoubleSummaryStatistics getStatiscs() {
         OffsetDateTime now = OffsetDateTime.now();
         return transactions.stream()
-            .filter(t -> t.getDataHora().isAfter(now.minusSeconds(60)))
+            .filter( t -> t.getDataHora().isAfter(now.minusSeconds(60)))
             .mapToDouble(Transaction::getValor)
-            .sumaryStatiscs();
+            .summaryStatistics();
     }
 
 }
