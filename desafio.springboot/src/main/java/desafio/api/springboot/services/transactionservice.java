@@ -3,16 +3,16 @@ package desafio.api.springboot.services;
 import java.time.OffsetDateTime;
 import java.util.DoubleSummaryStatistics;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedDeque;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-//import org.springframework.boot.autoconfigure.pulsar.PulsarProperties.Transaction;
+
 import org.springframework.stereotype.Service;
 
 import desafio.api.springboot.Transaction;
 
 @Service
-public class transactionservice {
+public class TransactionService {
     
     private final Queue<Transaction> transactions = new ConcurrentLinkedQueue<>();
 
